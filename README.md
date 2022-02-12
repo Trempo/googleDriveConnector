@@ -1,12 +1,12 @@
-#Google Drive Connector
+# Google Drive Connector
 
 Elaborado por [Felipe Bedoya](https://trempo.github.io)
 
-##Descarga
+## Descarga
 
 En la página de [GitHub](https://github.com/Trempo/googleDriveConnector) se encuentra el código fuente. Para descargarlo puede dar click [aquí](https://github.com/Trempo/googleDriveConnector/archive/refs/heads/main.zip).
 
-##Instalación
+## Instalación
 
 ### Instalación en ambiente virtual
 
