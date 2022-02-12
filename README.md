@@ -8,6 +8,8 @@ En la página de [GitHub](https://github.com/Trempo/googleDriveConnector) se enc
 
 ## Instalación
 
+Descomprima el archivo googleDriveConnector-main.zip en donde desee instalar el proyecto.
+
 ### Instalación en ambiente virtual
 
 Primero se crea el ambiente virtual en Python usando venv. Si el comando python no es reconocido puede intentar con python3 o añadiendo python al PATH.
@@ -19,6 +21,10 @@ Desde la consola estando en la carpeta del proyecto se ejecuta el comando:
 Por ejemplo:
 
     python -m venv /Escritorio/GoogleDriveConnector
+
+Ahora active el ambiente virtual con el comando:
+
+    ./Scripts/activate
 
 Luego se debe instalar los módulos necesarios para que funcione el programa.
 
