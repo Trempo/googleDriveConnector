@@ -59,7 +59,15 @@ Se deben pasar dos parámetros al programa, el ID de la carpeta la cual se desea
 
     python ./gdriveconnector.py -i '1GSTGDuDNWqw0Huv6k5Tqn_sBXriN27Pj' -r './Escritorio/GoogleDrive'
 
-Una vez ejecutado el programa en la consola aparecerá un enlace. Copia este enlace y pegalo en un explorador de internet. Allí podrá encontrar un código de autenticación. Copia y pegalo en la consola. Habrá quedado autenticado y no deberá hacer este proceso de nuevo. Sus credenciales están guardadas en el archivo creds.json.
+Una vez ejecutado el programa en la consola aparecerá un enlace. Copia este enlace y pegalo en un explorador de internet. 
+
+Es posible que Google no haya verificado el programa. Por lo que aparecerá una advertencia: 
+
+![img.png](img.png)
+
+Dele en Configuración avanzada y luego en "ir a perfect-day341122" y siga los pasos de autorización.
+
+Allí podrá encontrar un código de autenticación. Copia y pegalo en la consola. Habrá quedado autenticado y no deberá hacer este proceso de nuevo. Sus credenciales están guardadas en el archivo creds.json.
 
 Después de haberse autenticado se descargaran los archivos y se eliminaran de Google Drive.
 

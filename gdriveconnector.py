@@ -15,7 +15,20 @@ args = parser.parse_args()
 
 # Inicializa el servidor de autenticacion gdrive
 gauth = GoogleAuth()
-gauth.CommandLineAuth()
+
+#Credenciales guardadas
+gauth.LoadCredentialsFile("creds.json")
+
+if gauth.credentials is None:
+    # Si no hay credenciales, se autentica
+    gauth.CommandLineAuth()
+elif gauth.access_token_expired:
+    # Si las credenciales ya existen, pero estan expiradas, se autentica
+    gauth.Refresh()
+else:
+    # Si las credenciales ya existen y no estan expiradas, se usan
+    gauth.Authorize()
+
 
 # Acceso al drive
 drive = GoogleDrive(gauth)
