@@ -15,7 +15,7 @@ args = parser.parse_args()
 
 # Inicializa el servidor de autenticacion gdrive
 gauth = GoogleAuth()
-gauth.LocalWebserverAuth()
+gauth.CommandLineAuth()
 
 # Acceso al drive
 drive = GoogleDrive(gauth)
