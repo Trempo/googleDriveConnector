@@ -33,18 +33,23 @@ else:
 # Acceso al drive
 drive = GoogleDrive(gauth)
 
+start_path = args.path
+if start_path[-1] != '/':
+    start_path += '/'
 
 # Descarga del archivo
 def recursive_download(folder_id, download_path):
+    print(download_path)
     if download_path[-1] != '/':
         download_path += '/'
     folder = drive.CreateFile({'id': folder_id})
-    os.mkdir(download_path + folder['title'])
-    download_path = download_path + folder['title']
+    if start_path != download_path:
+        os.mkdir(download_path)
     file_list = drive.ListFile({'q': "'" + folder_id + "' in parents and trashed=false"}).GetList()
     for i, file1 in enumerate(sorted(file_list, key=lambda x: x['title']), start=1):
         print('Downloading {} from GDrive ({}/{})'.format(file1['title'], i, len(file_list)))
         if file1['mimeType'] == 'application/vnd.google-apps.folder':
+            download_path += file1['title'] + '/'
             recursive_download(file1['id'], download_path)
         else:
             file1.GetContentFile(download_path + '/' + file1['title'])
